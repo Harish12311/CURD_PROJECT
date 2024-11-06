@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pritish</title>
+    {% include 'cdnline.html' %}
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center"> Welcome To CURD Project </h1>
+            <div class="jumbotron bg-dark text-center">
+                <a href="{% url 'add_student' %}" class="btn btn-primary">ADD STUDENTS</a>
+                <a href="{% url 'display_details' %}" class="btn btn-danger">DISPLY DETAILS</a>
+                <a href="{% url 'update_details' %}" class="btn btn-success">UPDATE DETAILS</a>
+                <a href="{% url 'delete_student' %}" class="btn btn-warning">DELETE STUDENTS</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

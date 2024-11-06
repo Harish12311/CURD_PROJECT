@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pritish</title>
+    {% include 'cdnline.html' %}
+</head>
+<body>
+{% if data %}
+    <table class="table table-bordered mt-2">
+    <thead class="bg-success text-white">
+    <tr>
+        <th>id</th>
+        <th>roll_no</th>
+        <th>First Name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Percentage</th>
+        <th>year</th>
+        <th>location</th>
+        <th>college</th>
+        <th>university</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in data %}
+        <tr>
+        <td>{{ i.id }}</td>
+         <td>{{ i.roll_no }}</td>
+        <td>{{ i.first_name }}</td>
+        <td>{{ i.last_name }}</td>
+        <td>{{ i.email }}</td>
+        <td>{{ i.mobile }}</td>
+        <td>{{ i.percentage }}</td>
+        <td>{{ i.year }}</td>
+        <td>{{ i.location }}</td>
+        <td>{{ i.college }}</td>
+        <td>{{ i.university }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    {% else %}
+    <h1 class="text-center"> NO DATA AVAILABLE</h1>
+{% endif %}
+<a href="{% url 'mainPage' %}" class="btn btn-warning">GOTO MAIN PAGE</a>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% include 'cdnline.html' %}
+</head>
+<body>
+<div class="container_fluid">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <h4 class="text-center">Please Enter your Details Here !!!</h4>
+            <form method="POST" action="{% url 'update' data.id %}">
+                {% csrf_token %}
+                <label for="">Roll No:</label>
+                <input type="number" class="form-control" name="roll_no" value="{{ data.roll_no }}">
+                <label for="">First Name:</label>
+                <input type="text" class="form-control" name="fname" value="{{ data.first_name }}">
+                <label for="">Last Name:</label>
+                <input type="text" class="form-control" name="lname" value="{{ data.last_name }}">
+                <label for="">Email :</label>
+                <input type="email" class="form-control" name="email" value="{{ data.email }}">
+                <label for="">MOBILE :</label>
+                <input type="number" class="form-control" name="mobile" value="{{ data.mobile }}">
+                <label for="">Percentage:</label>
+                <input type="number" class="form-control" name="percentage" value="{{ data.percentage }}">
+                <label for="">Year:</label>
+                <input type="number" class="form-control" name="year" value="{{ data.year }}">
+                <label for="">Location:</label>
+                <input type="text" class="form-control" name="location" value="{{ data.location }}">
+                <label for="">College:</label>
+                <input type="text" class="form-control" name="college" value="{{ data.college }}">
+                <label for="">University</label>
+                <input type="text" class="form-control" name="university" value="{{ data.university }}">
+                <div class="text-center mt-2">
+                    <input type="submit" value="UPDATE" class="btn btn-success" >
+                    <input type="reset" value="CANCEL" class="btn btn-danger"><br>
+                    <a href="{% url 'mainPage' %}" class="btn btn-primary mt-2">Goto Main Page</a>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
